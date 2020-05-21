@@ -5,7 +5,22 @@ jobs=2
 load-plugins=pylint_strict_informational
 persistent=no
 
+[MESSAGES CONTROL]
+# Reasons disabled:
+# format - handled by black
+# locally-disabled - it spams too much
+# duplicate-code - unavoidable
+# cyclic-import - doesn't test if both import on load
+# abstract-class-little-used - prevents from setting right foundation
+# unused-argument - generic callbacks and setup methods create a lot of warnings
+# too-many-* - are not enforced for the sake of readability
+# too-few-* - same as too-many-*
+# abstract-method - with intro of async there are always methods missing
+# inconsistent-return-statements - doesn't handle raise
+# too-many-ancestors - it's too strict.
+# wrong-import-order - isort guards this
 disable=
+  format
   abstract-class-little-used,
   abstract-method,
   cyclic-import,
@@ -17,6 +32,7 @@ disable=
   not-context-manager,
   redefined-variable-type,
   too-few-public-methods,
+  too-many-ancestors,
   too-many-arguments,
   too-many-branches,
   too-many-instance-attributes,
@@ -26,7 +42,8 @@ disable=
   too-many-return-statements,
   too-many-statements,
   unnecessary-pass,
-  unused-argument
+  unused-argument,
+  wrong-import-order
 
 [REPORTS]
 reports=no

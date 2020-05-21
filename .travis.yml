@@ -15,8 +15,9 @@ matrix:
       env: TOXENV=typing
 
 cache:
+  pip: true
   directories:
-    - $HOME/.cache/pip
+    - $HOME/.cache/pre-commit
 install: pip install -U tox
 language: python
-script: travis_wait 30 tox --develop
+script: ${TRAVIS_WAIT:+travis_wait $TRAVIS_WAIT} tox --develop
