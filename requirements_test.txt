@@ -5,3 +5,5 @@ pydocstyle
 pylint
 pytest
 pylint-strict-informational
+pre-commit
+asynctest
