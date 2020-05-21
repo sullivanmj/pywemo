@@ -1,6 +1,9 @@
 [MASTER]
-ignore=ouimeaux_device
+#ignore=ouimeaux_device
 reports=no
+jobs=2
+load-plugins=pylint_strict_informational
+persistent=no
 
 disable=
   abstract-class-little-used,
@@ -27,9 +30,10 @@ disable=
 
 [REPORTS]
 reports=no
+score=no
 
 [FORMAT]
 expected-line-ending-format=LF
 
 [EXCEPTIONS]
-overgeneral-exceptions=Exception
+overgeneral-exceptions=BaseException,Exception
