@@ -39,4 +39,4 @@ repos:
         language: script
         types: [python]
         require_serial: true
-        #files: ^homeassistant/.+\.py$
+        files: ^pywemo/.+\.py$
