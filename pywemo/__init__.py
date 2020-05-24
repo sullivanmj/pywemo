@@ -13,3 +13,7 @@ from .ouimeaux_device.humidifier import Humidifier  # noqa F401
 
 from .discovery import discover_devices  # noqa F401
 from .subscribe import SubscriptionRegistry  # noqa F401
+
+# allow clients to use their existing client session, as is recommended by
+# aiohttp docs: https://docs.aiohttp.org/en/stable/client_quickstart.html
+from .httpconfig import initialize_async_client_session
